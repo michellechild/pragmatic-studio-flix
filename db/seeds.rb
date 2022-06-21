@@ -8,7 +8,7 @@
 
 Movie.create!([
   {
-    title: 'Avengers: Endgame',
+    title: 'Avengers Endgame',
     description:
     %{
       After the devastating events of Avengers: Infinity War, the universe
