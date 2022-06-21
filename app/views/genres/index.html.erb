@@ -1,0 +1,17 @@
+<h1>Genres</h1>
+<section class="genres">
+  <% @genres.each do |g| %>
+    <%= link_to g do %>
+      <div class="genre">
+        <span><%= g.name %></span>
+      </div>
+    <% end %>
+  <% end %>
+</section>
+<section class="admin">
+  <%= link_to "Add New Genre", new_genre_path, class: "button" %>
+</section>
+
+
+
+

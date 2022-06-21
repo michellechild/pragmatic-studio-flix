@@ -1,0 +1,14 @@
+
+  <% @movies.each do |movie| %>
+    <section class="movies">
+      <div class="image">
+        <%= image_tag movie.image_file_name %>
+      </div>
+      <div class="summary">
+        <h2><%= link_to movie.title, movie %></h2>
+        <h3><%= total_gross(movie) %></h3>
+        <%= render "shared/stars", percent: movie.average_stars_as_percent %>
+        <p><%= truncate(movie.description, length:150, separator: ' ') %></p>
+      </div>
+    </section>
+  <% end %>

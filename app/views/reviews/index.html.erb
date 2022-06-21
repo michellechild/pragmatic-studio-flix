@@ -1,0 +1,20 @@
+<h1>Reviews for <%= link_to @movie.title, @movie %></h1>
+<ul class="reviews">
+  <% @reviews.each do |review| %>
+    <li>
+      <div>
+         <%= profile_image(review.user, 35) %>
+        <span><strong><%= link_to review.user.name, review.user  %></strong></span>
+        <span class="date"><%= time_ago_in_words(review.created_at)%> ago</span>
+        <%= render "shared/stars", percent: review.stars_as_percent %>
+        <p><%= review.comment %></p>
+        <div>
+        <%= link_to 'Edit', edit_movie_review_path(@movie, review)  %>
+        &bull;
+        <%= link_to 'Delete', movie_review_path(@movie, review), method: :delete %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>
+

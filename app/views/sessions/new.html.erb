@@ -1,0 +1,13 @@
+<h1>Sign In</h1>
+<%= form_with(url:  session_url, local: true) do |f| %>
+
+<%= f.label :email_or_username, "Email or Username" %>
+<%= f.text_field :email_or_username, autofocus: true, required: true  %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password,  required: true %>
+
+  <%= f.submit "Sign In" %>
+<% end %>
+<br />
+<p>New to this app? <%=  link_to "Create an Account!", signup_path %></p>

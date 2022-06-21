@@ -1,0 +1,13 @@
+<h1><%= @genre.name %></h1>
+<% if @movies.present? %>
+  <h2>Movies</h2>
+  <% @movies.each do |movie| %>
+    <%= image_tag movie.image_file_name %>
+  <% end %>
+<% end %>
+<% if current_user_admin? %>
+<section class="admin">
+  <%= link_to "Edit Genre", edit_genre_path(@genre), class: "button" %>
+  <%= link_to "Delete Genre", genre_path(@genre), method: :delete, class: "button" %>
+</section>
+<% end %>
